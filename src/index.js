@@ -7,7 +7,31 @@ import { loadHome } from "./pages/home.js";
 import { loadMenu } from "./pages/menu.js";
 import { loadAbout } from "./pages/about.js";
 
+const content = document.querySelector("#content");
+
+function clearPage() {
+  content.innerHTML = "";
+}
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    loadHome();
-})
+  loadHome();
+});
+
+const home = document.querySelector("#home");
+const menu = document.querySelector("#menu");
+const about = document.querySelector("#about");
+
+home.addEventListener("click", (event) => {
+  clearPage();
+  loadHome();
+});
+
+menu.addEventListener("click", (event) => {
+  clearPage();
+  loadMenu();
+});
+
+about.addEventListener("click", (event) => {
+  clearPage();
+  loadAbout();
+});

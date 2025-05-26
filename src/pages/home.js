@@ -1,5 +1,7 @@
 function loadHome() {
-    console.log("loadHome() executed.") // debug
+  const content = document.querySelector("#content");
+  
+  console.log("loadHome() executed."); // debug
 }
 
 export { loadHome };
