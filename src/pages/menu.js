@@ -1,0 +1,3 @@
+function loadMenu() {}
+
+export { loadMenu };
