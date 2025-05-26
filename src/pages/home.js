@@ -1,4 +1,9 @@
+import { loadMenu } from "./menu.js";
 import homeImage from "/src/img/home-img.jpg";
+
+function clearPage() {
+  content.innerHTML = "";
+}
 
 function loadHome() {
   console.log("loadHome() executed."); // debug
@@ -46,6 +51,10 @@ function loadHome() {
 
   // Button
   const button = document.createElement("button");
+  button.addEventListener("click", () => {
+    clearPage();
+    loadMenu();
+  })
   button.textContent = "MENU PAGE";
   button.classList.add("btn");
   title_container.appendChild(button);

@@ -14,7 +14,7 @@ function clearPage() {
   content.innerHTML = "";
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   loadHome();
 });
 
@@ -22,17 +22,17 @@ const home = document.querySelector("#home");
 const menu = document.querySelector("#menu");
 const about = document.querySelector("#about");
 
-home.addEventListener("click", (event) => {
+home.addEventListener("click", () => {
   clearPage();
   loadHome();
 });
 
-menu.addEventListener("click", (event) => {
+menu.addEventListener("click", () => {
   clearPage();
   loadMenu();
 });
 
-about.addEventListener("click", (event) => {
+about.addEventListener("click", () => {
   clearPage();
   loadAbout();
 });
