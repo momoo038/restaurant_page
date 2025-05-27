@@ -1,0 +1,30 @@
+nav #menu {
+  background-color: transparent;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ff9913;
+  border: none;
+  padding: 15px 40px;
+  font-family: "Montserrat", serif;
+  cursor: pointer;
+  height: 100%;
+  transition: font-weight 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    font-size 0.3s ease-in-out;
+  border-bottom: 3px solid #ff9913;
+}
+
+nav > button#menu:hover {
+  color: white;
+  font-weight: 700;
+  background-color: #e68a00;
+  font-size: 24px;
+}
+
+.menu-page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+}

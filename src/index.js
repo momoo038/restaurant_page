@@ -1,8 +1,3 @@
-// about.js, home.js and menu.js export their respective functions and return homepage elements
-// index.js imports said functions, references main content div as well as the navigation
-// adds respective event listeners
-// executes loadHome on DOM load
-
 import { loadHome } from "./pages/home.js";
 import { loadMenu } from "./pages/menu.js";
 import { loadAbout } from "./pages/about.js";
@@ -10,12 +5,36 @@ import "/src/styles/index.css"
 
 const content = document.querySelector("#content");
 
+// nav
+const homeButton = document.querySelector("#home");
+const menuButton = document.querySelector("#menu")
+const aboutButton = document.querySelector("#about");
+
+const navButtons = [
+  { element: homeButton, id: "home" },
+  { element: menuButton, id: "menu" },
+  { element: aboutButton, id: "about"}
+];
+
 function clearPage() {
   content.innerHTML = "";
+  content.classList.remove("home-page", "menu-page", "about-page");
+}
+
+function setActiveButtonId(activeID) {
+  navButtons.forEach(buttonInfo => {
+    buttonInfo.element.removeAttribute("id");
+
+    if (buttonInfo.id === activeID) {
+      buttonInfo.element.setAttribute("id", buttonInfo.id)
+    }
+  })
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   loadHome();
+  setActiveButtonId("");
+  content.classList.add("home-page");
 });
 
 const home = document.querySelector("#home");
@@ -24,15 +43,21 @@ const about = document.querySelector("#about");
 
 home.addEventListener("click", () => {
   clearPage();
+  content.classList.add("home-page");
   loadHome();
+  setActiveButtonId("home");
 });
 
 menu.addEventListener("click", () => {
   clearPage();
+  content.classList.add("menu-page");
   loadMenu();
+  setActiveButtonId("menu");
 });
 
 about.addEventListener("click", () => {
   clearPage();
+  content.classList.add("about-page");
   loadAbout();
+  setActiveButtonId("about");
 });
