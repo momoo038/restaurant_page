@@ -1,5 +1,6 @@
 import { loadMenu } from "./menu.js";
 import homeImage from "/src/img/home-img.jpg";
+import "/src/home.css"
 
 function clearPage() {
   content.innerHTML = "";
@@ -68,7 +69,7 @@ function loadHome() {
   const footer_content = document.createElement("h3");
   footer_content.classList.add("footer_content");
   footer_content.appendChild(document.createTextNode("made by "));
-  
+
   const link = document.createElement("a");
   link.href = "https://github.com/momoo038";
   link.textContent = "@momo";

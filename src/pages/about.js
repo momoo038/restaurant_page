@@ -1,3 +1,5 @@
+import "/src/about.css"
+
 function loadAbout() {
   console.log("loadAbout() executed."); // debug
 

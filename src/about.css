@@ -65,12 +65,12 @@ nav {
 nav > button {
   background-color: transparent;
   color: rgb(255, 255, 255);
-  height: 100%;
   border: none;
   padding: 20px 40px;
   font-size: 24px;
   font-family: "Montserrat", serif;
   cursor: pointer;
+  height: 100%;
   font-weight: normal;
   transition: font-weight 0.3s ease-in-out, background-color 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
@@ -81,18 +81,6 @@ nav > button:hover {
   font-weight: 600;
 }
 
-.image {
-  width: 100%;
-  position: relative;
-}
-
-.image > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .hero-div {
   display: flex;
   flex-direction: column;
@@ -101,81 +89,6 @@ nav > button:hover {
   background-color: #f0f0f0;
   flex-grow: 1;
   position: relative;
-}
-
-.title {
-  display: flex;
-  position: absolute;
-  top: 20%;
-  left: 7.5%;
-  color: white;
-  flex-direction: column;
-  font-family: "Montserrat", serif;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 85%;
-  max-width: 1200px;
-  z-index: 10;
-}
-
-.title-home-1 {
-  font-size: clamp(48px, 8vw, 98px);
-  text-transform: uppercase;
-  color: #ff9913;
-  font-weight: 700;
-  text-shadow:
-    rgba(0, 0, 0, 0.25) 0px 5px,
-    rgba(0, 0, 0, 0.2) 0px 10px,
-    rgba(0, 0, 0, 0.15) 0px 15px,
-    rgba(0, 0, 0, 0.1) 0px 20px;
-}
-
-.title-home-2 {
-  font-size: clamp(36px, 6vw, 86px);
-  font-weight: 500;
-  color: #ffffff;
-  text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.title-para {
-  font-size: clamp(16px, 2.5vw, 22px);
-  color: #ffffff;
-  font-weight: 500;
-  margin-top: 20px;
-  width: 100%;
-  max-width: 800px;
-  line-height: 1.6;
-  text-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-.btn {
-  position: absolute;
-  top: 105%;
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  padding: 15px 55px;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  color: white;
-  background-color: #ff9913;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease;
-  z-index: 10;
-}
-
-.btn:hover {
-  background-color: #ff9100;
-  transform: scale(1.05) rotate(1.5deg);
-  transform-origin: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.btn:active {
-  transform: scale(1);
 }
 
 .footer {
