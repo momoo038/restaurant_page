@@ -6,6 +6,7 @@
 import { loadHome } from "./pages/home.js";
 import { loadMenu } from "./pages/menu.js";
 import { loadAbout } from "./pages/about.js";
+import "/src/styles/index.css"
 
 const content = document.querySelector("#content");
 

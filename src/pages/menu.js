@@ -1,4 +1,4 @@
-import "/src/menu.css"
+import "/src/styles/menu.css"
 
 function loadMenu() {
   console.log("loadMenu() executed."); // debug

@@ -1,4 +1,4 @@
-import "/src/about.css"
+import "/src/styles/about.css"
 
 function loadAbout() {
   console.log("loadAbout() executed."); // debug

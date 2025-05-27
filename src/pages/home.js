@@ -1,6 +1,6 @@
 import { loadMenu } from "./menu.js";
 import homeImage from "/src/img/home-img.jpg";
-import "/src/home.css"
+import "/src/styles/home.css"
 
 function clearPage() {
   content.innerHTML = "";
