@@ -33,7 +33,7 @@ function setActiveButtonId(activeID) {
 
 document.addEventListener("DOMContentLoaded", () => {
   loadHome();
-  setActiveButtonId("");
+  setActiveButtonId("home");
   content.classList.add("home-page");
 });
 

@@ -45,7 +45,6 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-
 nav {
   display: flex;
   justify-content: center;
@@ -65,7 +64,8 @@ nav > button {
   cursor: pointer;
   height: 100%;
   font-weight: normal;
-  transition: font-weight 0.3s ease-in-out, background-color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  transition: font-weight 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    font-size 0.3s ease-in-out;
 }
 
 nav > button:hover {
@@ -78,8 +78,9 @@ nav > button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #0f0f0f;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
   align-items: center;
-  background-color: #f0f0f0;
   flex-grow: 1;
   position: relative;
 }
