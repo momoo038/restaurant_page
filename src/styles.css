@@ -57,7 +57,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 70px;
   background-color: #222222;
   flex-shrink: 0;
 }
