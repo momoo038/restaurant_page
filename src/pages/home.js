@@ -41,10 +41,11 @@ function loadHome() {
   title_2.classList.add("title-home-2");
   title_container.appendChild(title_2);
 
-  const title_para = document.createElement("p")
-  title_para.textContent = "Craving something delicious? Dive into our menu and discover a world of vibrant flavors crafted with passion and the freshest local ingredients. Your next favorite dish is just one click away!";
+  const title_para = document.createElement("p");
+  title_para.textContent =
+    "Craving something delicious? Dive into our menu and discover a world of vibrant flavors crafted with passion and the freshest local ingredients. Your next favorite dish is just one click away!";
   title_para.classList.add("title-para");
-  title_container.appendChild(title_para)
+  title_container.appendChild(title_para);
 
   image_container.appendChild(title_container);
   // Title
@@ -54,11 +55,30 @@ function loadHome() {
   button.addEventListener("click", () => {
     clearPage();
     loadMenu();
-  })
+  });
   button.textContent = "MENU PAGE";
   button.classList.add("btn");
   title_container.appendChild(button);
   // Button
+
+  // Footer
+  const footer = document.createElement("div");
+  footer.classList.add("footer");
+
+  const footer_content = document.createElement("h3");
+  footer_content.classList.add("footer_content");
+  footer_content.appendChild(document.createTextNode("made by "));
+  
+  const link = document.createElement("a");
+  link.href = "https://github.com/momoo038";
+  link.textContent = "@momo";
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  footer_content.appendChild(link);
+  footer.appendChild(footer_content);
+
+  content.appendChild(footer);
+  // Footer
 }
 
 export { loadHome };

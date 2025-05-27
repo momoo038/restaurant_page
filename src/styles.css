@@ -9,18 +9,40 @@
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  width: 100%;  
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  scrollbar-width: thin;
+  scrollbar-color: #000 #222;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 4px;
+  border: 1px solid #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #444;
 }
 
 body {
   display: flex;
   flex-direction: column;
   background-color: #f0f0f0;
+  font-family: "Montserrat", sans-serif;
 }
 
 #content {
@@ -28,15 +50,16 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
 }
-/* Navigation */
+
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80px;
   background-color: #222222;
+  flex-shrink: 0;
 }
 
 nav > button {
@@ -48,16 +71,18 @@ nav > button {
   font-size: 24px;
   font-family: "Montserrat", serif;
   cursor: pointer;
-  transition: 0.3s ease;
+  font-weight: normal;
+  transition: font-weight 0.3s ease-in-out, background-color 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
 nav > button:hover {
-  background-color: #db9107;
+  background-color: #ff9913;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .image {
   width: 100%;
-  object-fit: cover;
   position: relative;
 }
 
@@ -65,18 +90,19 @@ nav > button:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: relative;
+  display: block;
 }
 
-hero-div {
+.hero-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
+  flex-grow: 1;
+  position: relative;
 }
 
-/* Title */
 .title {
   display: flex;
   position: absolute;
@@ -87,46 +113,88 @@ hero-div {
   font-family: "Montserrat", serif;
   justify-content: flex-start;
   align-items: flex-start;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  width: 85%;
+  max-width: 1200px;
+  z-index: 10;
 }
 
 .title-home-1 {
-  font-size: 98px;
+  font-size: clamp(48px, 8vw, 98px);
   text-transform: uppercase;
   color: #ff9913;
   font-weight: 700;
+  text-shadow:
+    rgba(0, 0, 0, 0.25) 0px 5px,
+    rgba(0, 0, 0, 0.2) 0px 10px,
+    rgba(0, 0, 0, 0.15) 0px 15px,
+    rgba(0, 0, 0, 0.1) 0px 20px;
 }
 
 .title-home-2 {
-  font-size: 86px;
+  font-size: clamp(36px, 6vw, 86px);
   font-weight: 500;
+  color: #ffffff;
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .title-para {
-  font-size: 22px;
+  font-size: clamp(16px, 2.5vw, 22px);
   color: #ffffff;
   font-weight: 500;
   margin-top: 20px;
-  width: 50%;
-  font-weight: 500;
+  width: 100%;
+  max-width: 800px;
+  line-height: 1.6;
+  text-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .btn {
   position: absolute;
-  top: 110%;
-  font-size: 1.5rem;
+  top: 105%;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   padding: 15px 55px;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 500;
   color: white;
   background-color: #ff9913;
   border: none;
-  border-radius: 3%;
+  border-radius: 5px;
   cursor: pointer;
-  font-family: "Montserrat", serif;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease;
+  z-index: 10;
 }
 
 .btn:hover {
-  background-color: rgb(212, 140, 6);
+  background-color: #ff9100;
+  transform: scale(1.05) rotate(1.5deg);
+  transform-origin: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: scale(1);
+}
+
+.footer {
+  background-color: #222222;
+  color: #ffffff;
+  padding: 25px 20px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.footer_content {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+a {
+  color: #ff9913;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
