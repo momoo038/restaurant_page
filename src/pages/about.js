@@ -10,17 +10,19 @@ function loadAbout() {
   content.appendChild(hero_div);
   // Hero holder
 
-  // Image
-  const image_container = document.createElement("div");
-  image_container.classList.add("image-about");
+  // // Image
+  // const image_container = document.createElement("div");
+  // image_container.classList.add("image-about");
 
-  const image = document.createElement("img");
-  image.src = aboutImage;
-  image_container.appendChild(image);
+  // const image = document.createElement("img");
+  // image.src = aboutImage;
+  // image_container.appendChild(image);
 
-  hero_div.appendChild(image_container);
-  // Image
-
+  // hero_div.appendChild(image_container);
+  // // Image
+  // flex main content div
+  const about_flex = document.createElement("div");
+  about_flex.classList.add("about-flex")
   // Main content div
 
   const about_container = document.createElement("div");
@@ -56,7 +58,8 @@ function loadAbout() {
   about_text.appendChild(about_para3)
 
   about_container.appendChild(about_text);
-  hero_div.appendChild(about_container);
+  about_flex.appendChild(about_container)
+  hero_div.appendChild(about_flex);
 
   // Main content div
 
