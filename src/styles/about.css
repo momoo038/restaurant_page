@@ -1,4 +1,9 @@
- nav #about {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap");
+
+nav #about {
   background-color: transparent;
   font-size: 24px;
   font-weight: 600;
@@ -8,13 +13,130 @@
   font-family: "Montserrat", serif;
   cursor: pointer;
   height: 100%;
-  transition: font-weight 0.3s ease-in-out, background-color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  transition: font-weight 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    font-size 0.3s ease-in-out;
   border-bottom: 3px solid #ff9913;
 }
 
 nav > button#about:hover {
-    color: white;
-    font-weight: 700;
-    background-color: #e68a00;
-    font-size: 24px;
+  color: white;
+  font-weight: 700;
+  background-color: #e68a00;
+  font-size: 24px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap");
+
+* {
+  font-family: Montserrat, serif;
+}
+
+nav #menu {
+  background-color: transparent;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ff9913;
+  border: none;
+  padding: 15px 40px;
+  font-family: "Montserrat", serif;
+  cursor: pointer;
+  height: 100%;
+  transition: font-weight 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    font-size 0.3s ease-in-out;
+  border-bottom: 3px solid #ff9913;
+}
+
+nav > button#menu:hover {
+  color: white;
+  font-weight: 700;
+  background-color: #e68a00;
+  font-size: 24px;
+}
+
+.about-page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+}
+
+.hero-div-about {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  background-color: #c1c1 !important;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+  padding-top: 200px;
+}
+
+.image-about > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  object-position: 50% 45%;
+  display: block;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  padding: 20px 20px 120px 20px;
+}
+
+.about-para1,
+.about-para2,
+.about-para3 {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin: 0 auto;
+  width: 800px;
+  min-width: 700px;
+  max-width: 900px;
+  padding-top: 20px;
+  font-weight: 500;
+  font-family: "Montserrat", serif;
+  word-spacing: 10px;
+}
+
+.about-para3 {
+  color: #e68a00;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.about-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #ff9913;
+  text-align: center;
+  margin-right: 150px;
+  font-family: "Montserrat", serif;
+  border: 3px solid #333;
+  padding: 30px 50px;
+}
+
+.about-title2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  width: 300px;
+  font-family: "Montserrat", serif;
 }
