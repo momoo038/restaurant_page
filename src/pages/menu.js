@@ -1,8 +1,4 @@
 import "/src/styles/menu.css";
-import image1 from "/src/img/food_table.jpg";
-import image2 from "/src/img/food_table.jpg";
-import image3 from "/src/img/food_table.jpg";
-import image4 from "/src/img/food_table.jpg";
 
 function loadMenu() {
   console.log("loadMenu() executed."); // debug
@@ -45,13 +41,6 @@ function loadMenu() {
       price: "€8.50",
     },
   ];
-
-  const imageData = [
-    { src: image1, alt: "Image 1" },
-    { src: image2, alt: "Image 2" },
-    { src: image3, alt: "Image 3" },
-    { src: image4, alt: "Image 4" }
-  ]
 
   const content = document.querySelector("#content");
 
