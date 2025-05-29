@@ -1,34 +1,37 @@
 import { loadHome } from "./pages/home.js";
 import { loadMenu } from "./pages/menu.js";
 import { loadAbout } from "./pages/about.js";
-import "/src/styles/index.css"
+import "/src/styles/index.css";
 
 const content = document.querySelector("#content");
 
 // nav
 const homeButton = document.querySelector("#home");
-const menuButton = document.querySelector("#menu")
+const menuButton = document.querySelector("#menu");
 const aboutButton = document.querySelector("#about");
 
 const navButtons = [
   { element: homeButton, id: "home" },
   { element: menuButton, id: "menu" },
-  { element: aboutButton, id: "about"}
+  { element: aboutButton, id: "about" },
 ];
 
 function clearPage() {
-  content.innerHTML = "";
+  const content = document.querySelector("#content");
+  while (content.firstChild) {
+    content.removeChild(content.firstChild);
+  }
   content.classList.remove("home-page", "menu-page", "about-page");
 }
 
 function setActiveButtonId(activeID) {
-  navButtons.forEach(buttonInfo => {
+  navButtons.forEach((buttonInfo) => {
     buttonInfo.element.removeAttribute("id");
 
     if (buttonInfo.id === activeID) {
-      buttonInfo.element.setAttribute("id", buttonInfo.id)
+      buttonInfo.element.setAttribute("id", buttonInfo.id);
     }
-  })
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
