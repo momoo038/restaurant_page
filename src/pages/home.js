@@ -1,6 +1,13 @@
+import { DomUtils } from "/src/DomUtils.js";
 import { loadMenu } from "./menu.js";
 import homeImage from "/src/img/home-img.jpg";
 import "/src/styles/home.css";
+
+function clearPage() {
+  while (content.firstChild) {
+    content.removeChild(content.firstChild);
+  }
+}
 
 function loadHome() {
   console.log("loadHome() executed."); // debug
@@ -8,74 +15,70 @@ function loadHome() {
   const content = document.querySelector("#content");
 
   // Hero holder
-  const hero_div = document.createElement("div");
-  hero_div.classList.add("hero-div");
-  content.appendChild(hero_div);
-  // Hero holder
+  const hero_div = DomUtils.createElement("div", { classes: "hero-div" });
 
   // Image
-  const image_container = document.createElement("div");
-  image_container.classList.add("image");
+  const imageElement = DomUtils.createImage(homeImage, "Homepage main visual");
 
-  const image = document.createElement("img");
-  image.src = homeImage;
-  image_container.appendChild(image);
-
-  hero_div.appendChild(image_container);
-  // Image
-
-  // Title
-  const title_container = document.createElement("div");
-  title_container.classList.add("title");
-
-  const title_1 = document.createElement("h1");
-  title_1.textContent = "Hungry?";
-  title_1.classList.add("title-home-1");
-  title_container.appendChild(title_1);
-
-  const title_2 = document.createElement("h1");
-  title_2.textContent = "Check out our menu!";
-  title_2.classList.add("title-home-2");
-  title_container.appendChild(title_2);
-
-  const title_para = document.createElement("p");
-  title_para.textContent =
-    "Craving something delicious? Dive into our menu and discover a world of vibrant flavors crafted with passion and the freshest local ingredients. Your next favorite dish is just one click away!";
-  title_para.classList.add("title-para");
-  title_container.appendChild(title_para);
-
-  image_container.appendChild(title_container);
-  // Title
-
-  // Button
-  const button = document.createElement("button");
-  button.addEventListener("click", () => {
-    clearPage();
-    loadMenu();
+  const image_container = DomUtils.createElement("div", {
+    classes: "image",
+    children: [imageElement],
   });
-  button.textContent = "MENU PAGE";
-  button.classList.add("btn");
-  title_container.appendChild(button);
-  // Button
+  hero_div.appendChild(image_container);
+
+  // Title
+  const main_page_title = DomUtils.createElement("div", {
+    classes: "title",
+    children: [
+      DomUtils.createElement("h1", {
+        classes: "title-home-1",
+        textContent: "Hungry?",
+      }),
+      DomUtils.createElement("h1", {
+        classes: "title-home-2",
+        textContent: "Check out our menu!",
+      }),
+      DomUtils.createElement("p", {
+        classes: "title-para",
+        textContent:
+          "Craving something delicious? Dive into our menu and discover a world of vibrant flavors crafted with passion and the freshest local ingredients. Your next favorite dish is just one click away!",
+      }),
+      DomUtils.createElement("button", {
+        classes: "btn",
+        textContent: "MENU PAGE",
+        listeners: {
+          click: () => {
+            clearPage();
+            loadMenu();
+          },
+        },
+      }),
+    ],
+  });
+  image_container.appendChild(main_page_title);
 
   // Footer
-  const footer = document.createElement("div");
-  footer.classList.add("footer");
+  const footerLink = DomUtils.createElement("a", {
+    href: "https://github.com/momoo038",
+    textContent: "@momo",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  });
 
-  const footer_content = document.createElement("h3");
-  footer_content.classList.add("footer_content");
-  footer_content.appendChild(document.createTextNode("made by "));
+  const textNodeMadeBy = document.createTextNode("made by ");
 
-  const link = document.createElement("a");
-  link.href = "https://github.com/momoo038";
-  link.textContent = "@momo";
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  footer_content.appendChild(link);
-  footer.appendChild(footer_content);
+  const footer_content = DomUtils.createElement("h3", {
+    classes: "footer_content",
+    children: [textNodeMadeBy, footerLink],
+  });
 
+  const footer = DomUtils.createElement("div", {
+    classes: "footer",
+    children: [footer_content],
+  });
+
+  content.appendChild(hero_div);
   content.appendChild(footer);
-  // Footer
 }
 
 export { loadHome };
