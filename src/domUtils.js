@@ -80,7 +80,7 @@ function createImage(src, alt, { classes, id, width, height } = {}) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-export const DomUtils = {
+export const domUtils = {
   createElement,
   createImage,
 };
