@@ -90,16 +90,6 @@ nav > button#menu:hover {
   display: block;
 }
 
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 800%;
-  height: 100%;
-  padding: 20px 20px 120px 20px;
-}
-
 .about-para1,
 .about-para2,
 .about-para3 {
@@ -108,13 +98,12 @@ nav > button#menu:hover {
   color: #333;
   text-align: justify;
   margin: 0 auto;
-  width: 800px;
-  min-width: 700px;
+  min-width: 400px;
   max-width: 900px;
   padding-top: 20px;
   font-weight: 500;
-  font-family: "Montserrat", serif;
-  word-spacing: 10px;
+  font-family: "IM Fell French Canon", serif;
+  word-spacing: 15px;
 }
 
 .about-para3 {
@@ -124,6 +113,7 @@ nav > button#menu:hover {
   text-align: center;
   margin-top: 100px;
   font-size: 36px;
+  font-family: "Montserrat", cursive;
 }
 
 .about-title {
@@ -134,14 +124,16 @@ nav > button#menu:hover {
   font-family: "Montserrat", serif;
   padding: 30px 50px;
   margin-bottom: 50px;
+  font-family: "IM Fell French Canon", serif;
 }
 
 .about-title2 {
   font-size: 32px;
   font-weight: 700;
   color: #333;
-  width: 300px;
+  width: 200px;
   font-family: "Montserrat", serif;
+  font-family: "Amatic SC", cursive;
 }
 
 .about-title2::after {
@@ -157,10 +149,17 @@ nav > button#menu:hover {
   display: flex;
   position: relative;
   flex-direction: column;
+  text-wrap: warp;
   justify-content: center;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 10px 15px;
+    background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 15px;
+  padding-bottom: 40px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .about-flex {
@@ -177,4 +176,14 @@ nav > button#menu:hover {
   padding: 20px 10px;
   height: 100%;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px 20px 120px 20px;
+  width: 760px;
 }
