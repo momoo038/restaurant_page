@@ -1,47 +1,9 @@
 import { domUtils } from "/src/domUtils.js";
 import "/src/styles/menu.css";
+import menuGridData from "/src/Data/menuGridData.json"
 
 function loadMenu() {
   console.log("loadMenu() executed."); // debug
-
-  const menuGridData = [
-    {
-      name: "Bruschetta al Pomodoro",
-      description:
-        "Toasted artisan bread topped with fresh, vibrant diced tomatoes, minced garlic, fresh basil, and a generous drizzle of extra virgin olive oil.",
-      price: "€7.50",
-    },
-    {
-      name: "French Onion Soup",
-      description:
-        "A rich, savory beef broth brimming with caramelized onions, topped with a crusty crouton and melted Gruyère cheese, served gratinéed.",
-      price: "€9.00",
-    },
-    {
-      name: "Wiener Schnitzel",
-      description:
-        "A traditional Austrian dish of tender, breaded veal cutlet, pan-fried to golden perfection. Served with parsley potatoes and a lemon wedge.",
-      price: "€19.50",
-    },
-    {
-      name: "Mushroom Risotto (Risotto ai Funghi)",
-      description:
-        "Creamy Arborio rice slow-cooked with a medley of wild mushrooms, Parmesan cheese, white wine, and finished with a hint of truffle oil.",
-      price: "€16.00",
-    },
-    {
-      name: "Grilled Salmon with Asparagus",
-      description:
-        "A perfectly grilled salmon fillet with a crispy skin, served alongside tender-crisp roasted asparagus and a light lemon-butter sauce.",
-      price: "€21.00",
-    },
-    {
-      name: "Tiramisu Classico",
-      description:
-        "An iconic Italian dessert. Layers of coffee-soaked ladyfingers and a rich, whipped mascarpone cream, elegantly dusted with cocoa powder.",
-      price: "€8.50",
-    },
-  ];
 
   const content = document.querySelector("#content");
 
@@ -77,9 +39,9 @@ function loadMenu() {
               }),
             ],
           });
-        }),
+        })
       }),
-    ],
+    ]
   });
 
   hero_div.appendChild(menu_container);
