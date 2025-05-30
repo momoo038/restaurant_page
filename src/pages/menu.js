@@ -1,3 +1,4 @@
+import { domUtils } from "/src/domUtils.js";
 import "/src/styles/menu.css";
 
 function loadMenu() {
@@ -45,48 +46,46 @@ function loadMenu() {
   const content = document.querySelector("#content");
 
   // Hero holder
-  const hero_div = document.createElement("div");
-  hero_div.classList.add("hero-div");
-  content.appendChild(hero_div);
+  const hero_div = domUtils.createElement("div", { classes: "hero-div" });
   // Hero holder
 
   // Div 1 (L)
-  const menu_container = document.createElement("div");
-  menu_container.classList.add("menu-container");
-
-  const menu_title = document.createElement("h1");
-  menu_title.classList.add("menu-title");
-  menu_title.textContent = "Our menu";
-  menu_container.appendChild(menu_title);
-
-  const menu_grid = document.createElement("div");
-  menu_grid.classList.add("menu-grid");
-
-  menuGridData.forEach((itemData) => {
-    const menu_grid_item = document.createElement("div");
-    menu_grid_item.classList.add("grid-item");
-
-    const itemName = document.createElement("h3");
-    itemName.classList.add("item-name");
-    itemName.textContent = itemData.name;
-    menu_grid_item.appendChild(itemName);
-
-    const itemDesc = document.createElement("p");
-    itemDesc.classList.add("item-desc");
-    itemDesc.textContent = itemData.description;
-    menu_grid_item.appendChild(itemDesc);
-
-    const itemPrice = document.createElement("span");
-    itemPrice.classList.add("item-price");
-    itemPrice.textContent = itemData.price;
-    menu_grid_item.appendChild(itemPrice);
-
-    menu_grid.appendChild(menu_grid_item);
+  const menu_container = domUtils.createElement("div", {
+    classes: "menu-container",
+    children: [
+      domUtils.createElement("h1", {
+        classes: "menu-title",
+        textContent: "Our menu",
+      }),
+      domUtils.createElement("div", {
+        classes: "menu-grid",
+        children: menuGridData.map((itemData) => {
+          return domUtils.createElement("div", {
+            classes: "grid-item",
+            children: [
+              domUtils.createElement("h3", {
+                classes: "item-name",
+                textContent: itemData.name,
+              }),
+              domUtils.createElement("p", {
+                classes: "item-desc",
+                textContent: itemData.description,
+              }),
+              domUtils.createElement("span", {
+                classes: "item-price",
+                textContent: itemData.price,
+              }),
+            ],
+          });
+        }),
+      }),
+    ],
   });
 
-  menu_container.appendChild(menu_grid);
   hero_div.appendChild(menu_container);
   // Div 1 (L)
+
+  content.appendChild(hero_div);
 
   // Footer
   const footer = document.createElement("div");
